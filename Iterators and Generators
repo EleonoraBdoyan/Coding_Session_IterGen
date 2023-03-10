@@ -1,0 +1,47 @@
+def gen_squares(n):
+    for i in range(1, n+1):
+        yield i ** 2
+
+for i in gen_squares(4):
+    print(i)
+
+
+
+
+def gen_fibonacci_numbers(n = 10):
+    fib_prev, fib_next = 0, 1
+    for i in range(n):
+        fib_num = fib_prev
+        fib_prev, fib_next = fib_next, fib_prev + fib_next
+        yield  fib_num
+
+for i in gen_fibonacci_numbers(4):
+    print(i)
+    
+    
+    
+    
+from_10_to_20 = (i for i in range(10, 21))
+print(next(from_10_to_20))
+print(next(from_10_to_20))
+print(next(from_10_to_20))
+for value in from_10_to_20:
+    print(value)
+    
+    
+    
+words = ['feel', 'graduate', 'movie', 'fashionable', 'bacon', 'drop', 'produce', 'acquisition',
+       	'cheap', 'strength', 'master', 'perception', 'noise', 'strange', 'am']
+
+lens = (len(i) for i in words)
+
+for i in lens:
+    print(i)
+    
+    
+    
+day_names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+days = ((i, day_names[i%7-2]) for i in range(1, 61))
+for i in days:
+    print(i)
